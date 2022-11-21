@@ -67,7 +67,7 @@ return packer.startup(function(use)
 		ft = { "markdown" },
 	})
     use("lvimuser/lsp-inlayhints.nvim")
-    use("folke/lua-dev.nvim")
+    use("folke/neodev.nvim")
     use("simrat39/rust-tools.nvim")
 
 	use("phaazon/hop.nvim")
@@ -78,6 +78,7 @@ return packer.startup(function(use)
 	use("morhetz/gruvbox")
 	use("Shatur/neovim-ayu")
     use('folke/tokyonight.nvim')
+    use("RRethy/nvim-base16")
 
 	use("norcalli/nvim-colorizer.lua")
 
