@@ -10,7 +10,12 @@ Terminals = {}
 
 local Terminal = require("toggleterm.terminal").Terminal
 
-Terminals.lazygit = Terminal:new({ cmd = "lazygit", direction = "float", hidden = true })
+Terminals.lazygit = Terminal:new({
+	cmd = "lazygit",
+	direction = "float",
+	hidden = true,
+})
+
 Terminals.float = Terminal:new({
 	direction = "float",
 	hidden = true,
@@ -19,6 +24,7 @@ Terminals.float = Terminal:new({
 		vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-\\>", "<cmd>close<CR>", { noremap = true, silent = true })
 	end,
 })
+
 Terminals.vertical = Terminal:new({
 	direction = "vertical",
 	size = 60,
