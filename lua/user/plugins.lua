@@ -69,6 +69,7 @@ return packer.startup(function(use)
 	use("hrsh7th/nvim-cmp")
 	use("ray-x/lsp_signature.nvim")
 	use("lvimuser/lsp-inlayhints.nvim")
+	use("amarakon/nvim-cmp-fonts")
 
 	-- snippets
 	use("L3MON4D3/LuaSnip") --snippet engine
