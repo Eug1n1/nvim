@@ -4,29 +4,36 @@ if not status_ok then
 	return
 end
 
-local formatting = null_ls.builtins.formatting
+-- local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
 	sources = {
 		null_ls.builtins.formatting.stylua,
+		null_ls.builtins.formatting.black,
+		null_ls.builtins.formatting.fixjson,
+		null_ls.builtins.formatting.beautysh,
+
 		null_ls.builtins.formatting.clang_format.with({
 			extra_args = {
 				"-style=WebKit",
 			},
 		}),
-		null_ls.builtins.formatting.prettier.with({
-			extra_args = {
-				"--no-semi",
-				"--single-quote",
-				"--jsx-single-quote",
-				"--tab-width",
-				vim.opt.shiftwidth:get(),
-			},
-		}),
 
-		-- null_ls.builtins.diagnostics.eslint.with({
-		--     extra_args = { "--no-eslintrc" },
+		-- null_ls.builtins.formatting.prettier.with({
+		--     extra_args = {
+		--         "--tab-width",
+		--         vim.opt.shiftwidth:get(),
+		--     },
 		-- }),
+
+		null_ls.builtins.formatting.prettierd,
+		-- null_ls.builtins.formatting.prettierd.with({
+		-- 	condition = function(utils)
+		-- 		return utils.has_file({ ".prettierrc" })
+		-- 	end,
+		-- }),
+
+		-- null_ls.builtins.diagnostics.eslint.with({}),
 		-- null_ls.builtins.completion.spell,
 	},
 })

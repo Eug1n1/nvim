@@ -9,18 +9,18 @@ if not status_ok_1 then
 end
 
 local servers = {
-	"cssmodules_ls",
 	"html",
-	"jdtls",
+    "cssls",
+	-- "jdtls",
 	"pyright",
 	"lua_ls",
 	"tsserver",
-	"yamlls",
 	"bashls",
 	"clangd",
 	"rust_analyzer",
-	"csharp_ls",
+	-- "csharp_ls",
 	"dockerls",
+	"prismals",
 }
 
 local settings = {
@@ -76,6 +76,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
 	vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
+	vim.keymap.set("n", "gk", vim.diagnostic.open_float, bufopts)
 	vim.keymap.set("n", "<C-k>", function()
 		require("lsp_signature").toggle_float_win()
 	end, bufopts)
@@ -85,24 +86,27 @@ local on_attach = function(client, bufnr)
 		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 	end, bufopts)
 	vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, bufopts)
-	vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
-	vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
+	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
+	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
 	vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
-	vim.keymap.set("n", "<space>f", function()
+	vim.keymap.set("n", "<leader>f", function()
 		vim.lsp.buf.format({ async = true })
 	end, bufopts)
 end
 
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 for _, server in pairs(servers) do
 	local opts = {
 		on_attach = on_attach,
+		capabilities = capabilities,
 	}
 
 	if server == "clangd" then
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities.offsetEncoding = "utf-8"
 
-        opts.capabilities = capabilities
+		opts.capabilities = capabilities
 	end
 
 	if server == "lua_ls" then

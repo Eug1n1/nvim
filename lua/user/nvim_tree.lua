@@ -19,7 +19,20 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	end,
 })
 
+local function on_attach(bufnr)
+	local api = require("nvim-tree.api")
+
+	local function opts(desc)
+		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+	end
+
+	api.config.mappings.default_on_attach(bufnr)
+
+	vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
+end
+
 nvim_tree.setup({
+	on_attach = on_attach,
 	disable_netrw = true,
 	hijack_netrw = true,
 	open_on_tab = false,
@@ -54,7 +67,7 @@ nvim_tree.setup({
 	},
 	view = {
 		width = 40,
-		hide_root_folder = true,
+		-- hide_root_folder = true,
 		side = "left",
 		mappings = {
 			custom_only = false,
@@ -66,6 +79,9 @@ nvim_tree.setup({
 		},
 		number = false,
 		relativenumber = false,
+	},
+	renderer = {
+		root_folder_label = false,
 	},
 	trash = {
 		cmd = "trash",

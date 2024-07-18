@@ -76,6 +76,7 @@ basic.vi_mode = {
 	end,
 }
 
+local telescope = require("telescope.builtin")
 basic.lsp_diagnos = {
 	name = "diagnostic",
 	hl_colors = hl_list.default,
@@ -90,6 +91,9 @@ basic.lsp_diagnos = {
 		end
 		return ""
 	end,
+    click = function ()
+        telescope.diagnostics()
+    end
 }
 
 basic.file = {

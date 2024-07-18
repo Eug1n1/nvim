@@ -119,4 +119,7 @@ return packer.startup(function(use)
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.x",
 	})
+
+	use("https://git.sr.ht/~p00f/nvim-ts-rainbow")
+	use({ "akinsho/bufferline.nvim", tag = "v3.*" })
 end)
