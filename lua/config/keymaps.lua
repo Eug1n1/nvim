@@ -1,50 +1,80 @@
 vim.g.mapleader = " "
 
-vim.api.nvim_set_keymap(
+vim.keymap.set(
     'i',
     'jk',
     '<Esc>',
     { noremap = true }
 )
 
--- FORMATTING
-vim.api.nvim_set_keymap(
+-- LSP
+vim.keymap.set(
     'n',
-    '<leader>ff',
-    ':lua vim.lsp.buf.format()<CR>', { noremap = true }
+    '<leader>lf',
+    vim.lsp.buf.format,
+    { noremap = true }
+)
+vim.keymap.set(
+    'n',
+    '<leader>lr',
+    vim.lsp.buf.rename,
+    { noremap = true }
+)
+vim.keymap.set(
+    'n',
+    '<leader>lgd',
+    vim.lsp.buf.definition,
+    { noremap = true }
+)
+vim.keymap.set(
+    'n',
+    '<leader>lgt',
+    vim.lsp.buf.type_definition,
+    { noremap = true }
+)
+vim.keymap.set(
+    'n',
+    '<leader>lgi',
+    vim.lsp.buf.implementation,
+    { noremap = true }
+)
+vim.keymap.set(
+    'n',
+    '<leader>lgr',
+    vim.lsp.buf.references,
+    { noremap = true }
 )
 
 -- DIAGNOSTICS
-vim.api.nvim_set_keymap(
+vim.keymap.set(
     'n',
-    '<leader>do',
-    '<cmd>lua vim.diagnostic.open_float()<CR>',
+    '<leader>df',
+    vim.diagnostic.open_float,
     { noremap = true, silent = true }
 )
-vim.api.nvim_set_keymap(
+vim.keymap.set(
     'n',
-    '<leader>d[',
-    '<cmd>lua vim.diagnostic.goto_prev()<CR>',
+    '<leader>dg[',
+    vim.diagnostic.goto_prev,
     { noremap = true, silent = true }
 )
-vim.api.nvim_set_keymap(
+vim.keymap.set(
     'n',
-    '<leader>d]',
-    '<cmd>lua vim.diagnostic.goto_next()<CR>',
+    '<leader>dg]',
+    vim.diagnostic.goto_next,
     { noremap = true, silent = true }
 )
 
--- vim.api.nvim_set_keymap(
+-- vim.keymap.set(
 --     'n',
 --     '<leader>dd',
 --     '<cmd>Telescope diagnostics<CR>',
 --     { noremap = true, silent = true }
 -- )
 
-vim.api.nvim_set_keymap(
+vim.keymap.set(
     'n',
     '<leader>dd',
-    '<cmd>lua vim.diagnostic.setloclist()<CR>',
+    vim.diagnostic.setloclist,
     { noremap = true, silent = true }
 )
-
