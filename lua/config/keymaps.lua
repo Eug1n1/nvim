@@ -6,6 +6,26 @@ vim.keymap.set(
     { noremap = true }
 )
 
+-- nvim-neo-tree/neo-tree.nvim
+vim.keymap.set(
+    "n",
+    "<leader>tf",
+    ":Neotree filesystem toggle<cr>",
+    { noremap = true, silent = true }
+)
+vim.keymap.set(
+    "n",
+    "<leader>tb",
+    ":Neotree source=buffers position=right toggle<cr>",
+    { noremap = true, silent = true }
+)
+-- vim.keymap.set(
+--     "n",
+--     "<leader>tb",
+--     ":Neotree buffers toggle<cr>",
+--     { noremap = true, silent = true }
+-- )
+
 -- yorickpeterse/nvim-window: neovim plugin to jump between windows
 -- vim.keymap.set(
 --     "n",

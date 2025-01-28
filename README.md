@@ -6,6 +6,7 @@
 - [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [Mofiqul/vscode.nvim](https://github.com/Mofiqul/vscode.nvim)
+- [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
 
 
 ### Interesting Plugins
