@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
 
 vim.keymap.set(
     'i',
@@ -6,6 +5,14 @@ vim.keymap.set(
     '<Esc>',
     { noremap = true }
 )
+
+-- yorickpeterse/nvim-window: neovim plugin to jump between windows
+-- vim.keymap.set(
+--     "n",
+--     "<leader>wj",
+--     ":lua require('nvim-window').pick()<CR>"
+-- )
+
 
 -- LSP
 vim.keymap.set(
