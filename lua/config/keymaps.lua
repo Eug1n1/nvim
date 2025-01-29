@@ -1,4 +1,3 @@
-
 vim.keymap.set(
     'i',
     'jk',
@@ -26,6 +25,32 @@ vim.keymap.set(
 --     { noremap = true, silent = true }
 -- )
 
+-- Navigating windows
+vim.keymap.set(
+    "n",
+    "<C-h>",
+    "<C-w>h",
+    { noremap = true, silent = true }
+)
+vim.keymap.set(
+    "n",
+    "<C-j>",
+    "<C-w>j",
+    { noremap = true, silent = true }
+)
+vim.keymap.set(
+    "n",
+    "<C-k>",
+    "<C-w>k",
+    { noremap = true, silent = true }
+)
+vim.keymap.set(
+    "n",
+    "<C-l>",
+    "<C-w>l",
+    { noremap = true, silent = true }
+)
+
 -- yorickpeterse/nvim-window: neovim plugin to jump between windows
 -- vim.keymap.set(
 --     "n",
@@ -33,6 +58,8 @@ vim.keymap.set(
 --     ":lua require('nvim-window').pick()<CR>"
 -- )
 
+vim.keymap.set("n", "<S-l>", ":vertical resize -2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<S-h>", ":vertical resize +2<CR>", { noremap = true, silent = true })
 
 -- LSP
 vim.keymap.set(
