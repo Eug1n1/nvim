@@ -5,6 +5,10 @@ vim.keymap.set(
     { noremap = true }
 )
 
+-- Navigate buffers
+vim.keymap.set("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", { noremap = true, silent = true })
+
 -- Stay in indent mode
 vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
 vim.keymap.set("v", ">", ">gv", { noremap = true, silent = true })
