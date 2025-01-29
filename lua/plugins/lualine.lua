@@ -3,8 +3,12 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
 
     config = function()
-        local function filepath()
-            return vim.fn.expand("%")
+        local function attached_lsp()
+            if #vim.lsp.get_clients() < 1 then
+                return "NO LSP"
+            end
+
+            return vim.lsp.get_clients()[1].name
         end
 
         local config = {
@@ -30,15 +34,15 @@ return {
             sections = {
                 lualine_a = { 'mode' },
                 lualine_b = { 'branch', 'diff', 'diagnostics' },
-                lualine_x = { 'encoding', 'fileformat', 'filetype' },
-                lualine_y = { 'location' },
-                lualine_z = {},
                 lualine_c = {
                     {
                         'filename',
                         path = 1
                     }
                 },
+                lualine_x = { 'encoding', 'filetype' },
+                lualine_y = { attached_lsp },
+                lualine_z = { 'location' },
             },
             inactive_sections = {
                 lualine_a = {},
