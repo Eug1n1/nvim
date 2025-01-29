@@ -9,6 +9,7 @@
 - [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [smoka7/hop.nvim](https://github.com/smoka7/hop.nvim)
 - [echasnovski/mini.files](https://github.com/echasnovski/mini.files)
+- [echasnovski/mini.diff](https://github.com/echasnovski/mini.diff)
 
 
 ### Interesting Plugins
