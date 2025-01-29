@@ -5,6 +5,13 @@ vim.keymap.set(
     { noremap = true }
 )
 
+-- Stay in indent mode
+vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
+vim.keymap.set("v", ">", ">gv", { noremap = true, silent = true })
+
+-- Move text up and down
+vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv", { noremap = true, silent = true })
+vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv", { noremap = true, silent = true })
 
 -- smoka7/hop.nvim
 local hop = require("hop")
