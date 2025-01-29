@@ -7,6 +7,7 @@
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [Mofiqul/vscode.nvim](https://github.com/Mofiqul/vscode.nvim)
 - [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)
+- [smoka7/hop.nvim](https://github.com/smoka7/hop.nvim)
 
 
 ### Interesting Plugins

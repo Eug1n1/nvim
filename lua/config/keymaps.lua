@@ -5,6 +5,28 @@ vim.keymap.set(
     { noremap = true }
 )
 
+
+-- smoka7/hop.nvim
+local hop = require("hop")
+local directions = require("hop.hint").HintDirection
+
+vim.keymap.set(
+    "n",
+    "<leader>h",
+    function()
+        hop.hint_char1({ direction = directions.AFTER_CURSOR })
+    end,
+    { remap = true }
+)
+vim.keymap.set(
+    "n",
+    "<leader>H",
+    function()
+        hop.hint_char1({ direction = directions.BEFORE_CURESOR })
+    end,
+    { remap = true }
+)
+
 -- nvim-neo-tree/neo-tree.nvim
 vim.keymap.set(
     "n",
