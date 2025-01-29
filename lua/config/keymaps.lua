@@ -43,16 +43,10 @@ vim.keymap.set(
 )
 vim.keymap.set(
     "n",
-    "<leader>tb",
-    ":Neotree source=buffers position=right toggle<cr>",
+    "<leader>tt",
+    ":Neotree filesystem position=current toggle<cr>",
     { noremap = true, silent = true }
 )
--- vim.keymap.set(
---     "n",
---     "<leader>tb",
---     ":Neotree buffers toggle<cr>",
---     { noremap = true, silent = true }
--- )
 
 -- Navigating windows
 vim.keymap.set(
