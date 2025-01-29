@@ -11,6 +11,7 @@
 - [echasnovski/mini.files](https://github.com/echasnovski/mini.files)
 - [echasnovski/mini.diff](https://github.com/echasnovski/mini.diff)
 - [echasnovski/mini.indentscope](https://github.com/echasnovski/mini.indentscope)
+- [echasnovski/mini.splitjoin](https://github.com/echasnovski/mini.splitjoin)
 
 
 ### Interesting Plugins

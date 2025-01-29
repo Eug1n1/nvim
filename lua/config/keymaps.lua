@@ -5,17 +5,61 @@ vim.keymap.set(
     { noremap = true }
 )
 
+-- echasnovski/mini.splitjoin
+vim.keymap.set(
+    "n",
+    "<leader>s",
+    "<cmd>lua MiniSplitjoin.split()<cr>",
+    { noremap = true, silent = true }
+)
+vim.keymap.set(
+    "n",
+    "<leader>j",
+    "<cmd>lua MiniSplitjoin.join()<cr>",
+    { noremap = true, silent = false }
+)
+
 -- Navigate buffers
-vim.keymap.set("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", { noremap = true, silent = true })
+vim.keymap.set(
+    "n",
+    "<Tab>",
+    ":bnext<CR>",
+    { noremap = true, silent = true }
+)
+vim.keymap.set(
+    "n",
+    "<S-Tab>",
+    ":bprevious<CR>",
+    { noremap = true, silent = true }
+)
 
 -- Stay in indent mode
-vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
-vim.keymap.set("v", ">", ">gv", { noremap = true, silent = true })
+vim.keymap.set(
+    "v",
+    "<",
+    "<gv",
+    { noremap = true, silent = true }
+)
+vim.keymap.set(
+    "v",
+    ">",
+    ">gv",
+    { noremap = true, silent = true }
+)
 
 -- Move text up and down
-vim.keymap.set("x", "J", ":move '>+1<CR>gv-gv", { noremap = true, silent = true })
-vim.keymap.set("x", "K", ":move '<-2<CR>gv-gv", { noremap = true, silent = true })
+vim.keymap.set(
+    "x",
+    "J",
+    ":move '>+1<CR>gv-gv",
+    { noremap = true, silent = true }
+)
+vim.keymap.set(
+    "x",
+    "K",
+    ":move '<-2<CR>gv-gv",
+    { noremap = true, silent = true }
+)
 
 -- smoka7/hop.nvim
 local hop = require("hop")
