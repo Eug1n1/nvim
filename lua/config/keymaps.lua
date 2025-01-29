@@ -38,6 +38,14 @@ vim.keymap.set(
     { remap = true }
 )
 
+-- echasnovski/mini.files
+vim.keymap.set(
+    "n",
+    "tt",
+    "<cmd>lua MiniFiles.open()<cr>",
+    { noremap = true, silent = true }
+)
+
 -- nvim-neo-tree/neo-tree.nvim
 vim.keymap.set(
     "n",
