@@ -20,11 +20,16 @@ local options = {
 
     wrap = false,
 
-    signcolumn = 'yes'
+    signcolumn = 'yes',
+
+    undofile = true,
+
+    sidescrolloff = 8,
+    scrolloff = 8
 }
 
 for key, value in pairs(options) do
-	vim.opt[key] = value
+    vim.opt[key] = value
 end
 
 vim.cmd.colorscheme "vscode"
