@@ -12,6 +12,7 @@
 - [echasnovski/mini.diff](https://github.com/echasnovski/mini.diff)
 - [echasnovski/mini.indentscope](https://github.com/echasnovski/mini.indentscope)
 - [echasnovski/mini.splitjoin](https://github.com/echasnovski/mini.splitjoin)
+- [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
 
 ### Interesting Plugins
