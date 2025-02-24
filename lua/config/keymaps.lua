@@ -93,13 +93,13 @@ vim.keymap.set(
 -- nvim-neo-tree/neo-tree.nvim
 vim.keymap.set(
     "n",
-    "<leader>tf",
+    "<leader>nf",
     ":Neotree filesystem toggle<cr>",
     { noremap = true, silent = true }
 )
 vim.keymap.set(
     "n",
-    "<leader>tt",
+    "<leader>nt",
     ":Neotree filesystem position=current toggle<cr>",
     { noremap = true, silent = true }
 )
@@ -210,4 +210,26 @@ vim.keymap.set(
     '<leader>dd',
     vim.diagnostic.setloclist,
     { noremap = true, silent = true }
+)
+
+-- Telescope
+local builtin = require('telescope.builtin')
+
+vim.keymap.set(
+    'n',
+    '<leader>tf',
+    builtin.find_files,
+    { desc = 'Telescope find files' }
+)
+vim.keymap.set(
+    'n',
+    '<leader>tg',
+    builtin.live_grep,
+    { desc = 'Telescope live grep' }
+)
+vim.keymap.set(
+    'n',
+    '<leader>th',
+    builtin.help_tags,
+    { desc = 'Telescope help tags' }
 )
