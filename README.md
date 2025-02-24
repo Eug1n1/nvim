@@ -14,6 +14,7 @@
 - [echasnovski/mini.splitjoin](https://github.com/echasnovski/mini.splitjoin)
 - [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
+- [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 
 
 ### Interesting Plugins
