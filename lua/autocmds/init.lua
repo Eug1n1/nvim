@@ -1,2 +1,2 @@
 require("autocmds.search")
-require("autocmds.autoreload")
+-- require("autocmds.autoreload")

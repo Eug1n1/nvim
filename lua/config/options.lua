@@ -5,6 +5,9 @@ local options = {
 
     autoindent = true,
     smartindent = true,
+    smarttab = true,
+
+    breakindent = true,
 
     cursorline = true,
     cursorcolumn = false,
@@ -25,11 +28,14 @@ local options = {
     undofile = true,
 
     sidescrolloff = 8,
-    scrolloff = 8
+    scrolloff = 8,
+
+    showmode = false,
+
+    splitright = true,
+    splitbelow = true,
 }
 
 for key, value in pairs(options) do
     vim.opt[key] = value
 end
-
-vim.cmd.colorscheme "vscode"
