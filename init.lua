@@ -3,15 +3,10 @@ require("autocmds")
 
 vim.filetype.add({
     filename = {
-        ['.*/playbooks/.*.yaml'] = 'yaml.ansible',
-    },
-})
-
-vim.filetype.add({
-    filename = {
         ["docker-compose.yml"] = "yaml.docker-compose",
         ["docker-compose.yaml"] = "yaml.docker-compose",
         ["compose.yml"] = "yaml.docker-compose",
         ["compose.yaml"] = "yaml.docker-compose",
+        ['.*/playbooks/.*.yaml'] = 'yaml.ansible',
     },
 })

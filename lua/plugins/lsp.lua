@@ -8,14 +8,21 @@ return {
             local lsp_servers = {
                 "pyright",
                 "ansiblels",
-                "docker_compose_language_service"
+                "docker_compose_language_service",
+                "gopls",
+                "terraformls"
             }
+
+            -- vim.lsp.enable("terraformls", {
+            --     capabilities = capabilities
+            -- })
 
             lspconfig.yamlls.setup({
                 settings = {
                     yaml = {
                         schemas = {
-                            ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/v1.32.1-standalone-strict/all.json"] = "/*.k8s.yaml",
+                            ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/refs/heads/master/v1.32.1-standalone-strict/all.json"] =
+                            "/*.k8s.yaml",
                         },
                     },
                 }

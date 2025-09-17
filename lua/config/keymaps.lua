@@ -1,9 +1,9 @@
-vim.keymap.set(
-    'i',
-    'jk',
-    '<Esc>',
-    { noremap = true }
-)
+-- vim.keymap.set(
+--     'i',
+--     'jk',
+--     '<Esc>',
+--     { noremap = true }
+-- )
 
 -- echasnovski/mini.splitjoin
 vim.keymap.set(
