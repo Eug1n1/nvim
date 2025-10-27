@@ -1,41 +1,38 @@
-local options = {
-    expandtab = true,
-    shiftwidth = 4,
-    tabstop = 4,
+vim.o.number = true
 
-    autoindent = true,
-    smartindent = true,
-    smarttab = true,
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
 
-    breakindent = true,
+vim.o.autoindent = true
+vim.o.smartindent = true
+vim.o.smarttab = true
+vim.o.breakindent = true
 
-    cursorline = true,
-    cursorcolumn = false,
-    colorcolumn = '90',
+vim.o.cursorline = true
+vim.o.cursorcolumn = false
+vim.o.colorcolumn = '90'
 
-    ignorecase = true,
-    smartcase = true,
-    hlsearch = true,
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.hlsearch = true
 
-    number = true,
+-- vim.o.clipboard = 'unnamedplus'
 
-    clipboard = 'unnamedplus',
+vim.o.wrap = false
 
-    wrap = false,
+vim.o.signcolumn = 'yes'
 
-    signcolumn = 'yes',
+vim.o.undofile = true
 
-    undofile = true,
+vim.o.sidescrolloff = 20
+vim.o.scrolloff = 12
 
-    sidescrolloff = 8,
-    scrolloff = 8,
+vim.o.showmode = false
+vim.o.swapfile = false
+vim.o.winborder = 'rounded'
 
-    showmode = false,
+--# splitright = true
+--# splitbelo = true
 
-    splitright = true,
-    splitbelow = true,
-}
-
-for key, value in pairs(options) do
-    vim.opt[key] = value
-end
+vim.g.mapleader = ' '

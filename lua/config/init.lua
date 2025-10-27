@@ -1,4 +1,6 @@
 require("config.options")
-require("config.lazy")
+require("config.filetypes")
+require("config.lsp")
 require("config.keymaps")
-require("config.diagnostic")
+require("config.colorscheme")
+require("config.trailing-spaces")

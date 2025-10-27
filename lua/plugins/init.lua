@@ -1,6 +1,7 @@
 vim.pack.add({
     { src = 'https://github.com/vague2k/vague.nvim' },
     { src = 'https://github.com/Mofiqul/vscode.nvim' },
+    { src = 'https://github.com/sainnhe/gruvbox-material' },
 
     { src = 'https://github.com/nvim-mini/mini.pick' },
     { src = 'https://github.com/nvim-mini/mini.surround' },
@@ -17,103 +18,22 @@ vim.pack.add({
 
     { src = 'https://github.com/nvim-lualine/lualine.nvim' },
     { src = 'https://github.com/nvim-tree/nvim-web-devicons' },
+    { src = 'https://github.com/trixnz/sops.nvim' },
 
-    { src = 'https://github.com/sainnhe/gruvbox-material' },
+    { src = 'https://github.com/nvim-lua/plenary.nvim' },
+    { src = 'https://github.com/j-morano/buffer_manager.nvim' },
 })
 
-local plugins = {
-    treesitter = {
-        name = "nvim-treesitter.configs",
-        src = 'https://github.com/nvim-treesitter/nvim-treesitter',
-        setup = {
-            ensure_installed = {
-                "c",
-                "go",
-                "lua",
-                "markdown",
-                "markdown_inline",
-            },
-            sync_install = true,
-        }
-    },
-    miniSurround = {
-        name = "mini.surround",
-        src = 'https://github.com/nvim-mini/mini.surround',
-    },
-    miniPairs = {
-        name = "mini.pairs",
-        src = 'https://github.com/nvim-mini/mini.pairs',
-    },
-    miniPick = {
-        name = "mini.pick",
-        src = 'https://github.com/nvim-mini/mini.pick',
-    },
-    miniComment = {
-        name = "mini.comment",
-        src = 'https://github.com/nvim-mini/mini.comment',
-        setup = {
-            options = {
-                ignore_blank_line = true,
-            },
-        },
-    },
-    miniDiff = {
-        name = "mini.diff",
-        src = 'https://github.com/nvim-mini/mini.diff',
-    },
-    lualine = {
-        src = 'https://github.com/nvim-lualine/lualine.nvim',
-    },
-    mason = {
-        src = 'https://github.com/mason-org/mason.nvim',
-    },
-    oil = {
-        src = 'https://github.com/stevearc/oil.nvim',
-        setup = {
-            columns = {
-                "icon",
-                "size",
-                "mtime",
-            },
-            win_options = {
-                cursorcolumn = true,
-            },
-            delete_to_trash = true,
-            keymaps = {
-                ["g?"] = { "actions.show_help", mode = "n" },
-                ["l"] = "actions.select",
-                ["h"] = { "actions.parent", mode = "n" },
-            },
-        }
-    },
-    lspConfig = {
-        src = 'https://github.com/neovim/nvim-lspconfig',
-    }
-}
+-- empty setup for plugins that don't need any configuration
+require("mini.pick").setup()
+require("mini.surround").setup()
+require("mini.pairs").setup()
+require("mini.diff").setup()
+require("sops").setup()
+require("buffer_manager").setup()
+require("mason").setup()
 
-local pluginsToInstall = {}
-for _, value in pairs(plugins) do
-    table.insert(pluginsToInstall, { src = value.src })
-end
-vim.pack.add(pluginsToInstall)
-
-for key, value in pairs(plugins) do
-    local pluginName = key
-    if value.name then
-        pluginName = value.name
-    end
-
-    local status_ok, plugin = pcall(require, pluginName)
-    if not status_ok then
-        print(key .. " not found")
-        return
-    end
-
-    if plugin.setup then
-        plugin.setup(value.setup)
-    else
-        plugin.setup()
-    end
-end
-
-
+-- plugins that need to be configured
+require("plugins.mini-comment")
+require("plugins.oil")
+require("plugins.treesitter")
