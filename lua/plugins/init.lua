@@ -25,6 +25,9 @@ vim.pack.add({
     { src = 'https://github.com/saghen/blink.cmp' },
     { src = 'https://github.com/L3MON4D3/LuaSnip' },
     { src = 'https://github.com/rafamadriz/friendly-snippets' },
+
+    { src = 'https://github.com/NeogitOrg/neogit' },
+    { src = 'https://github.com/sindrets/diffview.nvim' },
 })
 
 -- empty setup for plugins that don't need any configuration

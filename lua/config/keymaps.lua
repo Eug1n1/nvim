@@ -23,3 +23,5 @@ for i, key in ipairs(vim.split("1234567890", "")) do
 end
 
 vim.keymap.set({ 'n', 't' }, '<leader>m', bmui.toggle_quick_menu)
+
+vim.keymap.set({ 'n' }, '<leader>gg', ':Neogit<CR>')
