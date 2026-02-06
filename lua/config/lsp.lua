@@ -3,6 +3,7 @@ vim.lsp.enable("ansiblels")
 vim.lsp.enable("helm_ls")
 vim.lsp.enable("gitlab_ci_ls")
 vim.lsp.enable("rust_analyzer")
+vim.lsp.enable('gopls')
 
 vim.lsp.config("lua_ls", {
     settings = {
@@ -13,13 +14,3 @@ vim.lsp.config("lua_ls", {
         }
     }
 })
-
-vim.api.nvim_create_autocmd('LspAttach', {
-    callback = function(ev)
-        local client = vim.lsp.get_client_by_id(ev.data.client_id)
-        if client ~= nil and client:supports_method('textDocument/completion') then
-            vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-        end
-    end
-})
-vim.cmd("set completeopt+=noselect")
