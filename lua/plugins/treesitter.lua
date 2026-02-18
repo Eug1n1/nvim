@@ -11,6 +11,8 @@ nvim_treesitter.setup({
         "lua",
         "markdown",
         "markdown_inline",
+        "helm",
+        "gotmpl",
     },
     sync_install = true,
     auto_install = false,

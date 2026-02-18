@@ -1,9 +1,12 @@
-vim.lsp.enable("lua_ls")
-vim.lsp.enable("ansiblels")
-vim.lsp.enable("helm_ls")
-vim.lsp.enable("gitlab_ci_ls")
-vim.lsp.enable("rust_analyzer")
-vim.lsp.enable('gopls')
+vim.lsp.enable({
+    "lua_ls",
+    "ansiblels",
+    "helm_ls",
+    "gitlab_ci_ls",
+    "rust_analyzer",
+    "gopls",
+    "yamlls",
+})
 
 vim.lsp.config("lua_ls", {
     settings = {
